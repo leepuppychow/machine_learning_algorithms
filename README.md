@@ -11,6 +11,6 @@
   linear.univariate_linear_reg([-1,2], 0.01, 1500, 3.5)
 
   Output will show:
-    * predicted value(y) for the unknown_value
-    * linear regression model in y = mx + b format
-    * cost function for model
+  * predicted value(y) for the unknown_value
+  * linear regression model in y = mx + b format
+  * cost function for model
