@@ -46,8 +46,8 @@ class LinearRegressionTest < MiniTest::Test
     alpha = 0.01
     iterations = 1500
 
-    expected_theta = Matrix[[-3.709689119264011], [1.1743387084897057]]
     @linear.gradient_descent(theta, alpha, iterations)
+    expected_theta = Matrix[[-3.709689119264011], [1.1743387084897057]]
 
     assert_equal expected_theta, @linear.optimized_theta
   end
