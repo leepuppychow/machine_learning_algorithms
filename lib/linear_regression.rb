@@ -65,7 +65,7 @@ class LinearRegression
     puts "For value: #{value}:"
     puts "Predicted output is: #{(features * @optimized_theta)[0,0]}"
     puts "Model is: y = #{optimized_theta[0,0]}x(0) + #{optimized_theta[1,0]}x(1)"
-    puts "With cost function of: #{cost_function(@optimized_theta)}"
+    puts "With cost function value of: #{cost_function(@optimized_theta)}"
     (features * @optimized_theta)[0,0]
   end
 

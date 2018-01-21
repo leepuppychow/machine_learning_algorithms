@@ -8,6 +8,9 @@ class LinearRegressionTest < MiniTest::Test
   def setup
     @linear = LinearRegression.new
     @linear.load_data('./data/population_profit.csv')
+
+    @linear2 = LinearRegression.new
+    @linear2.load_data('./data/straight_line.csv')
   end
 
   def test_can_do_element_wise_matrix_multiplication
@@ -66,6 +69,8 @@ class LinearRegressionTest < MiniTest::Test
   def test_run_program
     assert_equal 0.4004963604499583, @linear.univariate_linear_reg([-1,2], 0.01, 1500, 3.5)
     assert_equal 4.510681840163928, @linear.univariate_linear_reg([-1,2], 0.01, 1500, 7)
+
+    assert_equal 15.0, @linear2.univariate_linear_reg([0,0], 0.01, 1500, 15).round(1)
   end
 
 
