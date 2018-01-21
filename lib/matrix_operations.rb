@@ -1,5 +1,5 @@
 module MatrixOperations
-#Ruby version 2.5 has method entrywise_product, but it does not support pry yet...
+#Ruby version 2.5 has method entrywise_product
 #also note that a Matrix is immutable in Ruby, so you can't do matrix[0,1] = 5
 #Enter theta as a Matrix (not Vector), because you can't do row_count or column_count on a vector in Ruby.
 
