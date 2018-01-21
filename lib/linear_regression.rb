@@ -1,6 +1,7 @@
 require 'csv'
 require 'matrix'
 require './lib/matrix_operations'
+require 'pry'
 
 class LinearRegression
 #this will do univariate linear regression using gradient descent
@@ -66,6 +67,12 @@ class LinearRegression
     puts "Model is: y = #{optimized_theta[0,0]}x(0) + #{optimized_theta[1,0]}x(1)"
     puts "With cost function of: #{cost_function(@optimized_theta)}"
     (features * @optimized_theta)[0,0]
+  end
+
+  def univariate_linear_reg(init_theta, learning_rate, iterations, unknown)
+    theta = Matrix[[init_theta[0]], [init_theta[1]]]
+    gradient_descent(theta, learning_rate, iterations)
+    predict(unknown)
   end
 
 end

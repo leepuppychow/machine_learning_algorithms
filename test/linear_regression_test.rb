@@ -63,8 +63,9 @@ class LinearRegressionTest < MiniTest::Test
     assert_equal 4.510681840163928, @linear.predict(7)
   end
 
-  def test_run_program 
-
+  def test_run_program
+    assert_equal 0.4004963604499583, @linear.univariate_linear_reg([-1,2], 0.01, 1500, 3.5)
+    assert_equal 4.510681840163928, @linear.univariate_linear_reg([-1,2], 0.01, 1500, 7)
   end
 
 
