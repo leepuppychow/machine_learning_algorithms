@@ -8,6 +8,8 @@ class NormalEquationTest < MiniTest::Test
   def setup
     @normal = NormalEquation.new
     @normal.load_data("./data/house_price_multivariate.csv")
+    @normal2 = NormalEquation.new
+    @normal2.load_data("./data/straight_line.csv")
   end
 
   def test_it_can_load_data
@@ -37,6 +39,7 @@ class NormalEquationTest < MiniTest::Test
     #predict house price for a 1650 sq-ft, 3 bedroom house
     assert_equal 293081.46, @normal.normal_eqn_prediction([1650, 3]).round(2)
     assert_equal 463539.84, @normal.normal_eqn_prediction([3000, 5]).round(2)
+    assert_equal 15.0, @normal2.normal_eqn_prediction([15]).round(2)
   end
 
 end
