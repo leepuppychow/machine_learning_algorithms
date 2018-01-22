@@ -28,6 +28,10 @@ class LinearRegression
   def load_data(file)
     #the unshift here adds the column of one for x(0)
     @data = Matrix.rows(CSV.readlines(file).map {|row| row.unshift(1.0)})
+    process_data
+  end
+
+  def process_data
     @data = change_all_data_to_float
     @m = @data.row_count
     @X = @data.minor(0..@m, 0..1)
