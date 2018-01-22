@@ -20,7 +20,7 @@
   Output will print:
   * predicted value(y) for the unknown_value
   * linear regression model in y = mx + b format
-  * cost function for model
+  * cost function value for model
 
 ### MULTIVARIATE LINEAR REGRESSION USING NORMAL EQUATION
 
