@@ -1,7 +1,6 @@
 require 'csv'
 require 'matrix'
 require './lib/matrix_operations'
-require 'pry'
 
 class LinearRegression
 #this will do univariate linear regression using gradient descent

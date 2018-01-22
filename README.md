@@ -1,16 +1,36 @@
-1) UNIVARIATE LINEAR REGRESSION
+# README
 
-  * Initialize:      linear = LinearRegression.new
-  * Load data:       linear.load_data('filename')
-  * Run algorithm:   
+## DEVELOPER:
+  * Lee Chow
 
-  linear.univariate_linear_reg(initial_theta, learning_rate, iterations, unknown_value)
+## RUBY VERSION:
+  * Ruby 2.5.0 or 2.4.1
 
-  Example(note initial_theta should be array with 2 elements):
+### UNIVARIATE LINEAR REGRESSION
 
-  linear.univariate_linear_reg([-1,2], 0.01, 1500, 3.5)
+#### How to Use:
+  * linear = LinearRegression.new
+  * linear.load_data('filename')
+  * linear.univariate_linear_reg([initial_theta], learning_rate, iterations, unknown_value)
 
-  Output will show:
+  Example (Note: initial_theta should be array with 2 elements):
+
+    linear.univariate_linear_reg([-1,2], 0.01, 1500, 3.5)
+
+  Output will print:
   * predicted value(y) for the unknown_value
   * linear regression model in y = mx + b format
   * cost function for model
+
+### MULTIVARIATE LINEAR REGRESSION USING NORMAL EQUATION
+
+### How to Use:
+  * normal = NormalEquation.new
+  * normal.load_data('filename')
+  * normal.normal_eqn_prediction([data])
+  * normal.theta will return a matrix object with calculated theta
+
+  Example:
+
+    normal.normal_eqn_prediction([1650,3])
+    normal.theta

@@ -1,6 +1,5 @@
 require 'matrix'
 require 'csv'
-require 'pry'
 
 class NormalEquation
 
