@@ -1,3 +1,5 @@
+require 'pry'
+
 module FeatureScaling
 
   def mean_normalization_matrix(matrix, decimals = 3)

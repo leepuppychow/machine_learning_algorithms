@@ -7,7 +7,4 @@ class LogisticRegression
   include Equations
   include FeatureScaling
 
-
-
-
 end
