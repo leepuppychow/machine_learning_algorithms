@@ -19,8 +19,8 @@ class LinearRegressionTest < MiniTest::Test
     m3 = Matrix[[1,2],[3,4]]
     m4 = Matrix[[1,2],[3,4]]
 
-    assert_equal Matrix[[1,4,9,16]], @linear.elementwise_product(m1,m2)
-    assert_equal Matrix[[1,4],[9,16]], @linear.elementwise_product(m3,m4)
+    assert_equal Matrix[[1,4,9,16]], @linear.elementwise_multiply(m1,m2)
+    assert_equal Matrix[[1,4],[9,16]], @linear.elementwise_multiply(m3,m4)
   end
 
   def test_can_load_CSV_file
