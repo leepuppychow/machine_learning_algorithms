@@ -8,4 +8,6 @@ module Equations
     matrix.map {|element| sigmoid(element)}
   end
 
+  
+
 end
