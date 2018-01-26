@@ -1,12 +1,15 @@
 require 'csv'
 require 'matrix'
 require './lib/matrix_operations'
+require './lib/feature_scaling'
+require 'pry'
 
 class LinearRegression
 #this will do univariate linear regression using gradient descent
 #cost_function is the mean squared error
 
   include MatrixOperations
+  include FeatureScaling
 
   attr_reader :data,
               :X,
@@ -26,6 +29,11 @@ class LinearRegression
 
   def load_data(file)
     #the unshift here adds the column of one for x(0)
+    #Note: find another way to add column of 1, because it'd be good to
+    #do feature scaling before adding the column. Otherwise, you end up
+    #doing mean_normalization on an array of 1's. This returns NaN because standard_deviation = 0
+    #and there is division by zero error when doing mean normalization.
+    # @data = Matrix.rows(CSV.readlines(file).map {|row| row.unshift(1.0)})
     @data = Matrix.rows(CSV.readlines(file).map {|row| row.unshift(1.0)})
     process_data
   end
