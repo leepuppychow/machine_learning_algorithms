@@ -1,4 +1,3 @@
-require 'pry'
 module Equations
 
   def sigmoid(value)
