@@ -54,9 +54,9 @@ class LinearRegression
     temp_theta1 = 0
     iterations.times do
 #had do do @X.minor(0..@m,0..0) instead of @X.column(0) because the latter is a Vector
-#cannot do row_count on Vector, which is called in elementwise_product
-      temp_theta0 = theta[0,0] - (alpha/@m) * (elementwise_product((hypothesis(theta)-@y), @X.minor(0..@m,0..0)).sum)
-      temp_theta1 = theta[1,0] - (alpha/@m) * (elementwise_product((hypothesis(theta)-@y), @X.minor(0..@m,1..1)).sum)
+#cannot do row_count on Vector, which is called in elementwise_multiply
+      temp_theta0 = theta[0,0] - (alpha/@m) * (elementwise_multiply((hypothesis(theta)-@y), @X.minor(0..@m,0..0)).sum)
+      temp_theta1 = theta[1,0] - (alpha/@m) * (elementwise_multiply((hypothesis(theta)-@y), @X.minor(0..@m,1..1)).sum)
 #this does the simultaneous update for all elements of theta
       theta = Matrix[[temp_theta0],[temp_theta1]]
     end
