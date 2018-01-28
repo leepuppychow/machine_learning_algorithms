@@ -26,13 +26,13 @@ class LinearRegressionTest < MiniTest::Test
   def test_can_load_CSV_file
     assert_instance_of Matrix, @linear.data
     assert_equal 97, @linear.data.row_count
-    assert_equal 3, @linear.data.column_count
+    assert_equal 2, @linear.data.column_count
     assert_equal 97, @linear.m
     assert_instance_of Matrix, @linear.X
     assert_instance_of Vector, @linear.y
   end
 
-  def test_will_automatically_add_column_of_1_to_X
+  def test_can_add_column_of_1_to_X
     assert_equal 2, @linear.X.column_count
     assert_equal 97, @linear.X.row_count
     assert_equal 1, @linear.X[0,0]

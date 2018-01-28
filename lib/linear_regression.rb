@@ -28,21 +28,16 @@ class LinearRegression
   end
 
   def load_data(file)
-    #the unshift here adds the column of one for x(0)
-    #Note: find another way to add column of 1, because it'd be good to
-    #do feature scaling before adding the column. Otherwise, you end up
-    #doing mean_normalization on an array of 1's. This returns NaN because standard_deviation = 0
-    #and there is division by zero error when doing mean normalization.
-    # @data = Matrix.rows(CSV.readlines(file).map {|row| row.unshift(1.0)})
-    @data = Matrix.rows(CSV.readlines(file).map {|row| row.unshift(1.0)})
+    @data = Matrix.rows(CSV.readlines(file))
     process_data
   end
 
   def process_data
     @data = change_all_data_to_float
     @m = @data.row_count
-    @X = @data.minor(0..@m, 0..1)
-    @y = @data.column(2)
+    @X = @data.minor(0..@m, 0..0)
+    @y = @data.column(1)
+    @X = add_column_of_ones(@X)
   end
 
   def change_all_data_to_float
