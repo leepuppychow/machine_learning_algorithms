@@ -13,22 +13,22 @@ module MatrixOperations
     end
   end
 
-  def elementwise_add(m1, m2)
-    product = Matrix.build(m1.row_count, m1.column_count) do |row, column|
-      m1[row,column] + m2[row,column]
-    end
-  end
-
-  def elementwise_subtract(m1, m2)
-    product = Matrix.build(m1.row_count, m1.column_count) do |row, column|
-      m1[row,column] + m2[row,column]
-    end
-  end
-
   def elementwise_divide(m1, m2)
     product = Matrix.build(m1.row_count, m1.column_count) do |row, column|
       m1[row,column] / m2[row,column]
     end
+  end
+
+  def change_all_data_to_float(matrix)
+    matrix.map{|element| element.to_f}
+  end
+
+  def ones(row,column)
+    Matrix.build(row,column) {1}
+  end
+
+  def zeros(row,column)
+    Matrix.build(row,column) {0}
   end
 
 end

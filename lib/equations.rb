@@ -8,4 +8,8 @@ module Equations
     matrix.map {|element| sigmoid(element)}
   end
 
+  def log_matrix(matrix)
+    matrix.map {|element| Math.log(element)}
+  end
+
 end

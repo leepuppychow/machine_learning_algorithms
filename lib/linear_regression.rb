@@ -33,15 +33,12 @@ class LinearRegression
   end
 
   def process_data
-    @data = change_all_data_to_float
+    @data = change_all_data_to_float(@data)
+    columns = @data.column_count
     @m = @data.row_count
-    @X = @data.minor(0..@m, 0..0)
-    @y = @data.column(1)
+    @X = @data.minor(0..@m, 0..columns-2)
+    @y = @data.minor(0..@m, (columns-1)..(columns - 1))
     @X = add_column_of_ones(@X)
-  end
-
-  def change_all_data_to_float
-    @data.map{|element| element.to_f}
   end
 
   def hypothesis(theta)

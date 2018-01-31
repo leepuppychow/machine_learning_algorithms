@@ -29,7 +29,7 @@ class LinearRegressionTest < MiniTest::Test
     assert_equal 2, @linear.data.column_count
     assert_equal 97, @linear.m
     assert_instance_of Matrix, @linear.X
-    assert_instance_of Vector, @linear.y
+    assert_instance_of Matrix, @linear.y
   end
 
   def test_can_add_column_of_1_to_X
